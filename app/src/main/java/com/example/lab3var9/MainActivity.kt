@@ -16,11 +16,15 @@ import com.example.lab3var9.ui.theme.Lab3Var9Theme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
@@ -55,6 +59,15 @@ fun SymbolCheck(modifier: Modifier = Modifier) {
             onValueChange = { symbol = it },
             label = { Text("Символ") }
         )
+
+        Spacer(modifier = Modifier.height(36.dp))
+
+        Button(
+            onClick = { }
+        ) {
+            Text("Проверить")
+
+        }
     }
 }
 
