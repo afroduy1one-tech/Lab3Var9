@@ -46,6 +46,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun SymbolCheck(modifier: Modifier = Modifier) {
     var symbol by remember { mutableStateOf("") }
+    var result by remember { mutableStateOf("") }
 
     Column(
         modifier = modifier
