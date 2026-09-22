@@ -17,6 +17,7 @@ import com.example.lab3var9.ui.theme.Lab3Var9Theme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -27,7 +28,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,14 +58,19 @@ fun SymbolCheck(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Введите символ")
+        Text(
+            text = "Введите символ",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
+        )
 
         Spacer(modifier = Modifier.height(36.dp))
 
         OutlinedTextField(
             value = symbol,
             onValueChange = { symbol = it },
-            label = { Text("Символ") }
+            label = { Text("Символ") },
+            modifier = Modifier.width(300.dp)
         )
 
         Spacer(modifier = Modifier.height(36.dp))
@@ -80,10 +88,14 @@ fun SymbolCheck(modifier: Modifier = Modifier) {
 
                     else -> "Непредусмотренный вариант!"
                 }
-            }
+            },
+            modifier = Modifier.width(200.dp)
         ) {
             Text("Проверить")
         }
+
+        Spacer(modifier = Modifier.height(36.dp))
+
         Text(result)
     }
 }
