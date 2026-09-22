@@ -64,11 +64,11 @@ fun SymbolCheck(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(36.dp))
 
         Button(
-            onClick = { }
+            onClick = {result = symbol }
         ) {
             Text("Проверить")
-
         }
+        Text(result)
     }
 }
 
