@@ -64,7 +64,19 @@ fun SymbolCheck(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(36.dp))
 
         Button(
-            onClick = {result = symbol }
+            onClick = {
+                result = when {
+                    symbol.length != 1 -> "Введите один символ"
+
+                    symbol[0] in '0'..'9' -> "Это цифра!"
+
+                    symbol[0] == '&' ||
+                            symbol[0] == '#' ||
+                            symbol[0] == '<' -> "Это спец символ!"
+
+                    else -> "Непредусмотренный вариант!"
+                }
+            }
         ) {
             Text("Проверить")
         }
